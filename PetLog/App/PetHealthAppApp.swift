@@ -1,12 +1,12 @@
 import SwiftUI
 
 @main
-struct PetLogApp: App {
+struct PetHealthAppApp: App {
     let persistenceController = PersistenceController.shared
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

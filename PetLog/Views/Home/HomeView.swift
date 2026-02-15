@@ -1,17 +1,20 @@
 import SwiftUI
 
-struct ContentView: View {
+struct HomeView: View {
     @Environment(\.managedObjectContext) private var viewContext
 
     var body: some View {
         NavigationStack {
-            Text("PetLog")
-                .navigationTitle("PetLog")
+            VStack(spacing: 16) {
+                PetCardView()
+                HealthSummaryView()
+            }
+            .navigationTitle("PetLog")
         }
     }
 }
 
 #Preview {
-    ContentView()
+    HomeView()
         .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
 }
